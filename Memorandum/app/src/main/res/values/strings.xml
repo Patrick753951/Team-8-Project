@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Memorandum</string>
+    <string name="week">近一周</string>
+    <string name="month">近一月</string>
+    <string name="am">上午</string>
+    <string name="pm">下午</string>
+    <string name="addmood">添加心情</string>
+    <string name="addschedule">添加行程</string>
+    <string name="btnmood">保存心情</string>
+    <string name="btnschedule">添加行程</string>
+    <string name="addmoodsuccess">心情保存成功</string>
+    <string name="addschedulesuccess">行程保存成功</string>
+    <string name="alarm">是否设置闹钟</string>
+    <string name="addalarmsuccess">闹钟设置成功</string>
+</resources>
