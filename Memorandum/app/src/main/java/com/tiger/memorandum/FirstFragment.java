@@ -79,14 +79,14 @@ public class FirstFragment extends Fragment {
 
                     if (r.getType() == 0)
                     {
-                        amSb.append("行程 : "+ r.getText());
-                        amSb.append("\n人员:"+r.getPerson());
+                        amSb.append("event : "+ r.getText());
+                        amSb.append("\nperson:"+r.getPerson());
 
 
                     }
                     else
                     {
-                        amSb.append("日记 : "+ r.getText());
+                        amSb.append("dialy : "+ r.getText());
                     }
                     amSb.append("\n"+curDate);
                     amSb.append("\n");
@@ -94,14 +94,14 @@ public class FirstFragment extends Fragment {
                 if((t+3600*12)<=r.getTime()&&(t+3600*24)>r.getTime()){
                     if (r.getType() == 0)
                     {
-                        pmSb.append("行程 : "+ r.getText());
-                        pmSb.append("\n人员:"+r.getPerson());
+                        pmSb.append("event : "+ r.getText());
+                        pmSb.append("\nperson:"+r.getPerson());
                     }
                     else
                     {
-                        pmSb.append("日记 : "+ r.getText());
+                        pmSb.append("dialy : "+ r.getText());
                     }
-                    pmSb.append("\n时间 ： "+curDate);
+                    pmSb.append("\ntime ： "+curDate);
                     pmSb.append("\n");
                 }
             }

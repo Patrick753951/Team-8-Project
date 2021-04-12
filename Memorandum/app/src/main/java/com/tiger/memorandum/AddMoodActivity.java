@@ -55,7 +55,7 @@ public class AddMoodActivity extends AppCompatActivity implements TimePicker.OnT
         EditText et = (EditText) findViewById(R.id.et_mood);
         String content = et.getText().toString();
         if(TextUtils.isEmpty(content)){
-            Toast.makeText(this, "请输入心情内容", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "please enter the mood", Toast.LENGTH_SHORT).show();
             return;
         }
         MyDataBase myDataBase = new MyDataBase(this, MyDataBase.DB_FILENAME, null, 1);

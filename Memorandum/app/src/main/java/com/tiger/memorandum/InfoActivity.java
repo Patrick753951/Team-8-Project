@@ -69,12 +69,12 @@ public class InfoActivity extends AppCompatActivity {
             if (t <= r.getTime() && (t + 3600 * 24) > r.getTime()) {
                 if (r.getType() == 0)
                 {
-                    sbRec.append("行程 : "+ r.getText());
-                    sbRec.append("\n人员:"+r.getPerson());
+                    sbRec.append("event : "+ r.getText());
+                    sbRec.append("\nperson:"+r.getPerson());
                 }
                 else
                 {
-                    sbRec.append("日记 : "+ r.getText());
+                    sbRec.append("dialy : "+ r.getText());
                 }
                 String curDate = format.format(new Date(r.getTime()));
                 sbRec.append("\n"+curDate);
