@@ -5,13 +5,13 @@
 An Android device or emulator is required to test or play this game. Player are therefore expected to have either.
 
 - Platform:
-    Please compile with: Android Studio 4.1.1 & Java 1.8
+    - Please compile with: Android Studio 4.1.1 & Java 1.8
 
 - Supported API levels:
-    **Android 8, API Level 27 or above**
+    - **Android 8, API Level 27 or above**
 
 - Permission requirement:
-    Access device location
+    - Access device location
 
 ***
 
@@ -41,4 +41,8 @@ An Android device or emulator is required to test or play this game. Player are 
 
 ## Changlog
 
-Please refer the release note
+- Please refer the release note
+
+## About
+- This application is a free application and developed by Team 8 with team member: Congkai Niu, Jialin Yang and Qianchao Wang. 
+- If you have any problem regarding this application, please contact us via Class or Email.
