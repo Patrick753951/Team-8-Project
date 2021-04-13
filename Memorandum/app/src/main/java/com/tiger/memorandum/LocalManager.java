@@ -1,11 +1,5 @@
 package com.tiger.memorandum;
 
-/**
- * @name: LocalManager
- * @date: 2021-04-12 13:18
- * @comment:
- */
-
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -207,7 +201,6 @@ public class LocalManager {
 
                     @Override
                     public void onNext(@NonNull Long number) {
-//                        JLog.d(TAG, "onNext: mLocation " + mLocation + "  mGpsLocationListener " + mGpsLocationListener);
                         if (mGpsLocationListener != null) {
                             if (mLocation != null && mLocation.getLongitude() != 0 && mLocation.getLatitude() != 0) {
                                 mGpsLocationListener.onLocationListener(mLocation.getLatitude(), mLocation.getLongitude(), mLocation.getAccuracy());
