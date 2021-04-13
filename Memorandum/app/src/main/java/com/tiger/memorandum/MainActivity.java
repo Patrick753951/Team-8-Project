@@ -20,7 +20,7 @@ import java.util.List;
 
 import io.reactivex.functions.Consumer;
 
-;
+
 
 
 public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener, RadioGroup.OnCheckedChangeListener {
@@ -72,7 +72,6 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         @SuppressLint("WrongConstant")
         @Override
         public void onLocationListener(double latitude, double longitude, float accuracy) {
-//            Log.d(TAG, "onLocationListener:  latitude "+latitude+" longitude  "+longitude);
             if(curFragment!=null&&curFragment instanceof  SecondFragment){
                 ((SecondFragment) curFragment).updateWeather(latitude,longitude);
             }
@@ -82,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     };
     private void init(){
         if (mLocalManager == null) {
-            mLocalManager = new LocalManager(this, 1 * 1000,  mGpsLocationListener);//每10s更新一下数据
+            mLocalManager = new LocalManager(this, 1 * 1000,  mGpsLocationListener);
             mLocalManager.register();
         }
         fragmentManager=getSupportFragmentManager();

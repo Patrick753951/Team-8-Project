@@ -38,20 +38,12 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 
-/**
- * @name: LocalManager
- * @author: jiangcy
- * @email: jcy0177@woozoom.net
- * @date: 2017-11-18 10:44
- * @comment:
- */
 public class LocalManager {
     private static String TAG = LocalManager.class.getSimpleName();
-    private RxPermissions rxPermissions = null;//权限管理
-    //    private Activity activity;
+    private RxPermissions rxPermissions = null;
     private WeakReference<Activity> mActivityWeakReference;
-    private LocationManager locationManager;//获取位置信息
-    private int time_interval = 1000; // 0.5 second
+    private LocationManager locationManager;
+    private int time_interval = 1000;
     private Disposable mDisposable;
     private boolean isGpsOutService = true;
     private Location mLocation = null;
@@ -61,7 +53,7 @@ public class LocalManager {
     private final String LOCALLONGITUDE = "LOCALLONGITUDE";
     private Handler mHandler;
     private final int GPS_LOSE = 0x1001;
-    private HandlerThread mHandlerThread;//HandlerThread能够新建拥有Looper的线程,必然是执行耗时操作(数据实时更新，我们每10秒需要切换一下显示的数据)
+    private HandlerThread mHandlerThread;
     private Disposable mTimerDisposable;
 
     public LocalManager(Activity activity, int time_interval, GpsLocationListener gpsLocationListener) {
@@ -172,9 +164,6 @@ public class LocalManager {
         checkGpsDialog.show();
     }
 
-    /**
-     * 注册
-     */
     @SuppressLint("MissingPermission")
     public void register() {
         if (!checkLocationPermission()) {
@@ -198,15 +187,6 @@ public class LocalManager {
     @SuppressLint("MissingPermission")
     private void initLocal() {
 
-        // 绑定监听，有4个参数
-        // 参数1，设备：有GPS_PROVIDER和NETWORK_PROVIDER两种
-        // 参数2，位置信息更新周期，单位毫秒
-        // 参数3，位置变化最小距离：当位置距离变化超过此值时，将更新位置信息
-        // 参数4，监听
-        // 备注：参数2和3，如果参数3不为0，则以参数3为准；参数3为0，则通过时间来定时更新；两者为0，则随时刷新
-
-        // 1秒更新一次，或最小位移变化超过1米更新一次；
-        // 注意：此处更新准确度非常低，推荐在service里面启动一个Thread，在run中sleep(10000);然后执行handler.sendMessage(),更新位置
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 1, mGpslocListener);
         mLocation = locationManager.getLastKnownLocation(getProvider());
         if (!(mLocation != null && mLocation.getLongitude() != 0 && mLocation.getLatitude() != 0) && mLocation != null) {
@@ -249,9 +229,6 @@ public class LocalManager {
                 });
     }
 
-    /**
-     * 解除注册
-     */
     public void unRegister() {
         if (mLocation != null) {
             if (null != mActivityWeakReference && mActivityWeakReference.get() != null) {
@@ -278,41 +255,31 @@ public class LocalManager {
     }
 
 
-    //监测定位权限
+
     public boolean checkLocationPermission() {
         if (rxPermissions == null) {
             return false;
         }
-//
+
         return rxPermissions.isGranted(Manifest.permission.ACCESS_COARSE_LOCATION) && rxPermissions.isGranted(Manifest.permission.ACCESS_FINE_LOCATION);
 
     }
 
 
-    // 获取Location Provider
+
     private String getProvider() {
-        // 构建位置查询条件
+
         Criteria criteria = new Criteria();
-        // 查询精度：高
         criteria.setAccuracy(Criteria.ACCURACY_FINE);
-        // 是否查询海拨：否
         criteria.setAltitudeRequired(false);
-        // 是否查询方位角 : 否
         criteria.setBearingRequired(false);
-        // 是否允许付费：是
         criteria.setCostAllowed(true);
-        // 电量要求：低
         criteria.setPowerRequirement(Criteria.POWER_LOW);
-        // 返回最合适的符合条件的provider，第2个参数为true说明 , 如果只有一个provider是有效的,则返回当前provider
         return locationManager.getBestProvider(criteria, true);
     }
 
-    // GPS位置监听
     private LocationListener mGpslocListener = new LocationListener() {
 
-        /**
-         * 位置信息变化时触发
-         */
         public void onLocationChanged(Location location) {
             mHandler.removeMessages(GPS_LOSE);
             if (location != null) {
@@ -326,29 +293,17 @@ public class LocalManager {
 
         }
 
-        /**
-         * GPS状态变化时触发
-         */
         public void onStatusChanged(String provider, int status, Bundle extras) {
             switch (status) {
-                // GPS状态为可见时
                 case LocationProvider.AVAILABLE:
-                    //  Log.i(TAG, "当前GPS状态为可见状态");
                     break;
-                // GPS状态为服务区外时
                 case LocationProvider.OUT_OF_SERVICE:
-                    //Log.i(TAG, "当前GPS状态为服务区外状态");
                     break;
-                // GPS状态为暂停服务时
                 case LocationProvider.TEMPORARILY_UNAVAILABLE:
-                    // Log.i(TAG, "当前GPS状态为暂停服务状态");
                     break;
             }
         }
 
-        /**
-         * GPS开启时触发
-         */
         public void onProviderEnabled(String provider) {
             @SuppressLint("MissingPermission")
             Location location = locationManager.getLastKnownLocation(provider);
@@ -360,9 +315,6 @@ public class LocalManager {
             }
         }
 
-        /**
-         * GPS禁用时触发
-         */
         public void onProviderDisabled(String provider) {
         }
 

@@ -72,7 +72,7 @@ public class SecondFragment extends Fragment implements DatePicker.OnDateChanged
             OkHttpClient okHttpClient = new OkHttpClient();
             final Request request = new Request.Builder()
                     .url(url)
-                    .get()//默认就是GET请求，可以不写
+                    .get()
                     .build();
             Call call = okHttpClient.newCall(request);
             call.enqueue(new Callback() {

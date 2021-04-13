@@ -4,11 +4,6 @@ import com.tiger.memorandum.bean.Sky;
 
 import java.util.HashMap;
 
-/**
- * @name: Contants
- * @date: 2021-04-12 13:22
- * @comment:
- */
 class Contants {
     public static double LATITUDE=0;
     public static double  LONGITUDE=0;

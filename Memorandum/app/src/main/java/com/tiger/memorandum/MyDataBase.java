@@ -64,7 +64,6 @@ public class MyDataBase extends SQLiteOpenHelper{
     public boolean updateRecord(long id,int cueNum) {
         ContentValues values = new ContentValues();
         values.put("cur_num", cueNum);
-        //修改model的数据
         long index = getWritableDatabase().update(TABLE_NAME, values, "uid=?" , new String[]{"" + id});
         if (index != -1) {
             return true;

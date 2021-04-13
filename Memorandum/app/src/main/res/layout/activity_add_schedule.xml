@@ -6,37 +6,40 @@
     android:layout_height="match_parent"
     tools:context="com.tiger.memorandum.AddScheduleActivity"
     android:orientation="vertical">
+
     <EditText
         android:id="@+id/et_schedule"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:hint="请输入行程信息"
-        android:textColorHint="#B8B7B7"
-        android:textColor="#000"
         android:layout_marginTop="10dp"
-        android:gravity="left"/>
+        android:layout_weight="1"
+        android:gravity="left"
+        android:hint="@string/ScheduleInfo"
+        android:textColor="#000"
+        android:textColorHint="#B8B7B7" />
+
     <EditText
         android:id="@+id/et_person"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:hint="请输入人员信息"
-        android:textColorHint="#B8B7B7"
-        android:textColor="#000"
         android:layout_marginTop="10dp"
-        android:gravity="left"/>
+        android:layout_weight="1"
+        android:gravity="left"
+        android:hint="@string/PersonInfo"
+        android:textColor="#000"
+        android:textColorHint="#B8B7B7" />
    <RelativeLayout
        android:id="@+id/rl_space_num"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:visibility="gone"
        android:orientation="horizontal">
+
        <TextView
            android:layout_width="wrap_content"
-           android:text="闹钟循环次数"
+           android:layout_height="wrap_content"
            android:layout_centerVertical="true"
-           android:layout_height="wrap_content"/>
+           android:text="@string/IntervalTime" />
        <EditText
            android:id="@+id/ed_space_num"
            android:layout_centerVertical="true"
@@ -52,11 +55,12 @@
         android:layout_height="wrap_content"
         android:visibility="gone"
         android:orientation="horizontal">
+
         <TextView
             android:layout_width="wrap_content"
-            android:text="闹钟间隔时间(分钟)"
+            android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_height="wrap_content"/>
+            tools:text="@string/TimeBetweenIntervals" />
         <EditText
             android:id="@+id/ed_space_time"
             android:layout_centerVertical="true"

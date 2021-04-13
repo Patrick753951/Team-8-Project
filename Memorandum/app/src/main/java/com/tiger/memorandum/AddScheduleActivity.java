@@ -105,7 +105,6 @@ public class AddScheduleActivity extends AppCompatActivity implements TimePicker
         intent.putExtra("ID", record.getId());
         Random r=new Random();
         PendingIntent pi = PendingIntent.getBroadcast(this, r.nextInt(), intent, 0);
-        //立即提醒
         am.set(AlarmManager.RTC, time, pi);
         return true;
     }
@@ -159,7 +158,6 @@ public class AddScheduleActivity extends AppCompatActivity implements TimePicker
         Toast.makeText(this, R.string.addschedulesuccess, Toast.LENGTH_SHORT).show();
         if (cbAlarm.isChecked()) {
             if (setAlarmClock(record,currentTimeMillis)) {
-//            if (setAlarmClock(record,System.currentTimeMillis()+6*1000)) {
                 Toast.makeText(this, R.string.addalarmsuccess, Toast.LENGTH_SHORT).show();
             }
         }
