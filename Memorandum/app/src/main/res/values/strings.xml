@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Memorandum</string>
+    <string name="app_name">Time Manager</string>
     <string name="week">Weekly</string>
     <string name="month">Monthly</string>
     <string name="am">morning</string>

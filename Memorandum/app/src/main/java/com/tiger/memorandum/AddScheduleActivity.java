@@ -116,12 +116,12 @@ public class AddScheduleActivity extends AppCompatActivity implements TimePicker
         EditText et = (EditText) findViewById(R.id.et_schedule);
         String content = et.getText().toString();
         if (TextUtils.isEmpty(content)) {
-            Toast.makeText(this, "请输入行程内容", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please enter the information", Toast.LENGTH_SHORT).show();
             return;
         }
         String person = et_person.getText().toString();
         if (TextUtils.isEmpty(person)) {
-            Toast.makeText(this, "请输入人员", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please enter the person", Toast.LENGTH_SHORT).show();
             return;
         }
         String spaceTime = ed_space_time.getText().toString();
@@ -129,12 +129,12 @@ public class AddScheduleActivity extends AppCompatActivity implements TimePicker
         if(cbAlarm.isChecked()){
 
             if (TextUtils.isEmpty(spaceTime)) {
-                Toast.makeText(this, "请输入闹钟间隔时间", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Please enter the interval", Toast.LENGTH_SHORT).show();
                 return;
             }
 
             if (TextUtils.isEmpty(spaceNum)) {
-                Toast.makeText(this, "请输入闹钟间隔次数", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Please enter the interval time", Toast.LENGTH_SHORT).show();
                 return;
             }
         }

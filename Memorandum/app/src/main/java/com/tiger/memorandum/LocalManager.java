@@ -152,14 +152,14 @@ public class LocalManager {
             return;
         }
         checkGpsDialog = new AlertDialog.Builder(context)
-                .setMessage("未开启GPS无法使用，请立即设置")
-                .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                .setMessage("do not open GPS service，please set to open")
+                .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
                     }
                 })
-                .setPositiveButton("设置", new DialogInterface.OnClickListener() {
+                .setPositiveButton("setting", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();

@@ -32,7 +32,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         Log.d("jcy-TAG", "record : " + record);
         if (record.getCurNum() >= record.getNum()) {
             //闹钟全部完事了
-            Log.d("jcy-TAG", "闹钟全部完事了 : ");
+            Log.d("jcy-TAG", "notif is done : ");
         } else {
             //重复播放下一次闹钟
             final AlarmManager am = (AlarmManager) context.getSystemService(ALARM_SERVICE);
@@ -46,8 +46,8 @@ public class AlarmReceiver extends BroadcastReceiver {
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             String curDate = format.format(new Date());
             String nextDate = format.format(new Date(nextAlarmTime));
-            Log.d("jcy-TAG", " 当前时间  : " + curDate);
-            Log.d("jcy-TAG", " 下一次时间  : " + nextDate);
+            Log.d("jcy-TAG", " now  : " + curDate);
+            Log.d("jcy-TAG", " next time  : " + nextDate);
             //立即提醒
             am.set(AlarmManager.RTC, nextAlarmTime, pi);
             int curNum  =record.getCurNum()+1;
@@ -65,7 +65,7 @@ public class AlarmReceiver extends BroadcastReceiver {
                 PendingIntent resultPendingIntent = PendingIntent.getActivity(context, 0, resultIntent,
                         PendingIntent.FLAG_UPDATE_CURRENT);//允许更新
                 param.setSmallIcon(R.mipmap.ic_launcher)
-                        .setContentTitle("新闹钟")
+                        .setContentTitle("new alarm")
                         .setContentIntent(resultPendingIntent)
                         .setContentText(record.getText())
                         .setAutoCancel(true);
