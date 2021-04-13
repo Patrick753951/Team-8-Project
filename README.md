@@ -55,6 +55,8 @@ An Android device or emulator is required to test or play this game. Player are 
 - test case4: **Weather**
     - **Step 1** When the user selects the calendar interface, the user will see a weather information based on the user's location at the top of the screen.
     - **Step 2** If running on the emulator, when the user changes the virtual geographic location information, the weather information will also change.
+
+- I hope that when you open our software, you can select a date, and then click the date to test whether you can add events, add dates, and get the weather of your current location. At the same time, we also have the alarm function. You can also change the time interval of the alarm and the number of reminders
     
 ***
 
