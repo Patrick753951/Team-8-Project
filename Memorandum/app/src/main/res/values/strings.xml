@@ -12,8 +12,8 @@
     <string name="addschedulesuccess">save schedule successful</string>
     <string name="alarm">set notes</string>
     <string name="addalarmsuccess">set notes successful</string>
-    <string name="IntervalTime">Interval times</string>
-    <string name="TimeBetweenIntervals">Time Between Intervals</string>
+    <string name="IntervalTime">Repeat</string>
+    <string name="TimeBetweenIntervals">Time Between Repeat</string>
     <string name="PersonInfo">Please enter person information</string>
     <string name="ScheduleInfo">Please enter schedule information</string>
 </resources>

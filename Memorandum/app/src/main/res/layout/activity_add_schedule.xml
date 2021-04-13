@@ -60,7 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            tools:text="@string/TimeBetweenIntervals" />
+            android:text="@string/TimeBetweenIntervals" />
         <EditText
             android:id="@+id/ed_space_time"
             android:layout_centerVertical="true"
