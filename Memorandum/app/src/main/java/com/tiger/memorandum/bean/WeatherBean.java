@@ -1,6 +1,3 @@
-/**
-  * Copyright 2021 bejson.com 
-  */
 package com.tiger.memorandum.bean;
 import java.util.List;
 
