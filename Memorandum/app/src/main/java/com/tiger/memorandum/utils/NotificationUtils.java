@@ -21,11 +21,6 @@ import java.lang.reflect.Method;
 
 import static android.Manifest.permission.EXPAND_STATUS_BAR;
 
-/**
- * @name: NotificationUtils
- * @date: 2021-04-12 16:43
- * @comment:
- */
 public class NotificationUtils {
     public static final int IMPORTANCE_UNSPECIFIED = -1000;
     public static final int IMPORTANCE_NONE        = 0;
